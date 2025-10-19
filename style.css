@@ -182,20 +182,26 @@ li {
   transform: scale(1.02);
 }
 
-/* Destaque também no JOGO */
+/* JOGO RESPONSIVO PROPORÇÃO CORRETA */
 #jogo .iframe-container {
+  position: relative;
+  width: 100%;
+  max-width: 485px; /* largura máxima do iframe em desktop */
+  aspect-ratio: 485 / 402; /* força a proporção correta */
+  margin: 30px auto;
   background: #ffffff;
   border: 2px solid #66bb6a;
   border-radius: 20px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  width: fit-content;
-  margin: 30px auto;
-  padding: 15px;
-  transition: transform 0.3s;
 }
 
-#jogo .iframe-container:hover {
-  transform: scale(1.02);
+#jogo .iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /* Divisor forte antes de QUIZ e JOGO */
@@ -254,13 +260,7 @@ li {
   display: none;
 }
 
-/* JOGO */
-.iframe-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
+/* Dica do JOGO */
 .dica {
   margin-top: 10px;
   font-weight: bold;
